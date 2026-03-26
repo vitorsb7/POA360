@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>POA360 | Dashboard do Cidadão</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="index.html" class="brand">
+        <div class="brand-mark">360</div>
+        <div>
+          <strong>POA360</strong>
+          <span>Painel do Cidadão</span>
+        </div>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+        ☰
+      </button>
+
+      <nav class="nav" id="mainNav">
+        <a href="#registro">Registrar</a>
+        <a href="#minhas-ocorrencias">Minhas ocorrências</a>
+        <a href="#bairro">Meu bairro</a>
+        <button id="citizenLogoutBtn" class="btn btn-soft nav-btn">Sair</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="section-head left">
+        <span class="section-kicker">Ambiente do cidadão</span>
+        <h1 class="page-title" id="citizenWelcomeTitle">Olá</h1>
+        <p id="citizenWelcomeText">Acompanhe suas ocorrências e a situação do seu bairro.</p>
+      </div>
+
+      <div class="cards-4">
+        <div class="kpi-card glass">
+          <span>Total enviado</span>
+          <strong id="citizenKpiTotal">0</strong>
+          <small>Suas ocorrências</small>
+        </div>
+        <div class="kpi-card glass">
+          <span>Recebidas</span>
+          <strong id="citizenKpiRecebidas">0</strong>
+          <small>Com leitura/prazo</small>
+        </div>
+        <div class="kpi-card glass">
+          <span>Em andamento</span>
+          <strong id="citizenKpiAndamento">0</strong>
+          <small>Em operação</small>
+        </div>
+        <div class="kpi-card glass">
+          <span>Resolvidas</span>
+          <strong id="citizenKpiResolvidas">0</strong>
+          <small>Finalizadas</small>
+        </div>
+      </div>
+
+      <div class="grid-2 section-small">
+        <section id="registro" class="glass panel-box">
+          <div class="panel-head">
+            <h2>Nova ocorrência</h2>
+            <span class="status-pill blue">Participação cidadã</span>
+          </div>
+
+          <form id="citizenOccurrenceForm" class="form-grid">
+            <select id="citizenOccurrenceType" required>
+              <option value="">Tipo de ocorrência</option>
+              <option>Alagamento</option>
+              <option>Falta de água</option>
+              <option>Falta de luz</option>
+              <option>Bloqueio de via</option>
+              <option>Risco estrutural</option>
+              <option>Falha urbana</option>
+            </select>
+
+            <select id="citizenOccurrenceSeverity" required>
+              <option value="">Gravidade</option>
+              <option>Baixa</option>
+              <option>Média</option>
+              <option>Alta</option>
+            </select>
+
+            <textarea id="citizenOccurrenceDescription" placeholder="Descreva a situação..." required></textarea>
+            <button type="submit" class="btn btn-primary wide">Enviar ocorrência</button>
+          </form>
+        </section>
+
+        <section id="bairro" class="glass panel-box">
+          <div class="panel-head">
+            <h2>Status do bairro</h2>
+            <span class="status-pill yellow">Monitoramento</span>
+          </div>
+
+          <div id="citizenNeighborhoodBox" class="result-box">
+            Carregando informações do bairro...
+          </div>
+        </section>
+      </div>
+
+      <section id="minhas-ocorrencias" class="section-small">
+        <div class="glass panel-box">
+          <div class="panel-head">
+            <h2>Minhas ocorrências</h2>
+            <span class="status-pill green">Acompanhamento</span>
+          </div>
+
+          <div id="citizenOccurrenceList" class="occ-list"></div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

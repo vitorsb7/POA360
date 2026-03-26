@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>POA360 | Dashboard Governamental</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dashboard-body">
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-mark">360</div>
+      <div>
+        <strong>POA360</strong>
+        <span>Gestão pública</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="active" href="#visao">Visão geral</a>
+      <a href="#graficos">Gráficos</a>
+      <a href="#ocorrencias">Ocorrências</a>
+      <a href="#contatos">Contatos</a>
+    </nav>
+
+    <button class="btn btn-danger wide" id="govLogoutBtn">Sair</button>
+  </aside>
+
+  <main class="dashboard-main">
+    <header class="dashboard-top">
+      <div>
+        <h1>Dashboard Executivo</h1>
+        <p id="govWelcomeText">Monitoramento estratégico da cidade</p>
+      </div>
+
+      <div class="top-actions">
+        <button class="btn btn-soft" id="simulateBtn">Simular atualização</button>
+        <button class="btn btn-primary" id="sendGeneralAlertBtn">Enviar alerta geral</button>
+      </div>
+    </header>
+
+    <section id="visao" class="dash-section">
+      <div class="cards-4">
+        <div class="kpi-card glass">
+          <span>Total de ocorrências</span>
+          <strong id="kpiTotal">0</strong>
+          <small>Registros no sistema</small>
+        </div>
+        <div class="kpi-card glass">
+          <span>Críticas</span>
+          <strong id="kpiCriticas">0</strong>
+          <small>Alta prioridade</small>
+        </div>
+        <div class="kpi-card glass">
+          <span>Em andamento</span>
+          <strong id="kpiAndamento">0</strong>
+          <small>Operação ativa</small>
+        </div>
+        <div class="kpi-card glass">
+          <span>Resolvidas</span>
+          <strong id="kpiResolvidas">0</strong>
+          <small>Finalizadas</small>
+        </div>
+      </div>
+    </section>
+
+    <section id="graficos" class="dash-section grid-2">
+      <div class="glass panel-box">
+        <div class="panel-head">
+          <h2>Ocorrências por tipo</h2>
+          <span class="status-pill yellow">Leitura rápida</span>
+        </div>
+
+        <div class="bar-chart">
+          <div class="bar-row">
+            <span>Alagamento</span>
+            <div class="bar-track"><div id="barAlagamento" class="bar-fill"></div></div>
+            <strong id="countAlagamento">0</strong>
+          </div>
+          <div class="bar-row">
+            <span>Falta de água</span>
+            <div class="bar-track"><div id="barAgua" class="bar-fill"></div></div>
+            <strong id="countAgua">0</strong>
+          </div>
+          <div class="bar-row">
+            <span>Falta de luz</span>
+            <div class="bar-track"><div id="barLuz" class="bar-fill"></div></div>
+            <strong id="countLuz">0</strong>
+          </div>
+          <div class="bar-row">
+            <span>Bloqueio de via</span>
+            <div class="bar-track"><div id="barVia" class="bar-fill"></div></div>
+            <strong id="countVia">0</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass panel-box">
+        <div class="panel-head">
+          <h2>Ações rápidas</h2>
+          <span class="status-pill blue">Operacional</span>
+        </div>
+
+        <div class="action-list">
+          <button class="action-btn" onclick="sendPartnerAlert('DMAE')">Alertar DMAE</button>
+          <button class="action-btn" onclick="sendPartnerAlert('Defesa Civil')">Alertar Defesa Civil</button>
+          <button class="action-btn" onclick="sendPartnerAlert('CEEE / Energia')">Alertar Energia</button>
+          <button class="action-btn" onclick="sendPartnerAlert('Secretaria de Obras')">Alertar Obras</button>
+        </div>
+
+        <div class="demo-note">
+          Essas ações simulam o contato com órgãos estratégicos em caso de risco.
+        </div>
+      </div>
+    </section>
+
+    <section id="ocorrencias" class="dash-section">
+      <div class="glass panel-box">
+        <div class="panel-head">
+          <h2>Fila de ocorrências</h2>
+          <span class="status-pill red">Leitura obrigatória</span>
+        </div>
+
+        <div id="govOccurrenceList" class="occ-list"></div>
+      </div>
+    </section>
+
+    <section id="contatos" class="dash-section">
+      <div class="glass panel-box">
+        <div class="panel-head">
+          <h2>Contatos estratégicos</h2>
+          <span class="status-pill blue">Resposta rápida</span>
+        </div>
+
+        <div class="contact-list">
+          <div class="contact-item">
+            <strong>DMAE</strong>
+            <p>Abastecimento, drenagem e ações relacionadas à água.</p>
+            <button class="btn btn-soft small" onclick="sendPartnerAlert('DMAE')">Enviar alerta</button>
+          </div>
+
+          <div class="contact-item">
+            <strong>Defesa Civil</strong>
+            <p>Atuação emergencial e suporte a situações críticas.</p>
+            <button class="btn btn-soft small" onclick="sendPartnerAlert('Defesa Civil')">Enviar alerta</button>
+          </div>
+
+          <div class="contact-item">
+            <strong>CEEE / Energia</strong>
+            <p>Ocorrências ligadas à falta de luz e rede elétrica.</p>
+            <button class="btn btn-soft small" onclick="sendPartnerAlert('CEEE / Energia')">Enviar alerta</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

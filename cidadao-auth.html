@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>POA360 | Acesso do Cidadão</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="auth-page">
+  <div class="auth-wrapper">
+    <div class="auth-side">
+      <a href="index.html" class="brand auth-brand">
+        <div class="brand-mark">360</div>
+        <div>
+          <strong>POA360</strong>
+          <span>Acesso do Cidadão</span>
+        </div>
+      </a>
+
+      <div class="auth-copy">
+        <div class="tag">Participação cidadã • ocorrências • acompanhamento</div>
+        <h1>Área do cidadão</h1>
+        <p>
+          Faça seu cadastro, entre no sistema e acompanhe o andamento das ocorrências
+          enviadas para a plataforma.
+        </p>
+      </div>
+    </div>
+
+    <div class="auth-card glass">
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="cidLoginTab">Login</button>
+        <button class="tab-btn" data-tab="cidRegisterTab">Cadastro</button>
+      </div>
+
+      <div id="cidLoginTab" class="tab-content active">
+        <h2>Entrar</h2>
+        <p class="muted">Acesse seu painel de cidadão.</p>
+
+        <form id="citizenLoginForm" class="form-grid">
+          <input type="email" id="citizenLoginEmail" placeholder="Seu e-mail" required />
+          <input type="password" id="citizenLoginPassword" placeholder="Sua senha" required />
+          <button type="submit" class="btn btn-primary wide">Entrar no painel</button>
+        </form>
+      </div>
+
+      <div id="cidRegisterTab" class="tab-content">
+        <h2>Criar conta</h2>
+        <p class="muted">Cadastre seu acesso no sistema.</p>
+
+        <form id="citizenRegisterForm" class="form-grid">
+          <input type="text" id="citizenRegisterName" placeholder="Seu nome completo" required />
+          <input type="email" id="citizenRegisterEmail" placeholder="Seu e-mail" required />
+          <input type="text" id="citizenRegisterBairro" placeholder="Seu bairro" required />
+          <input type="password" id="citizenRegisterPassword" placeholder="Criar senha" required />
+          <button type="submit" class="btn btn-primary wide">Cadastrar cidadão</button>
+        </form>
+      </div>
+
+      <a href="index.html" class="back-link">← Voltar para a página inicial</a>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

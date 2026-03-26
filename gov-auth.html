@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>POA360 | Acesso Governamental</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="auth-page">
+  <div class="auth-wrapper">
+    <div class="auth-side">
+      <a href="index.html" class="brand auth-brand">
+        <div class="brand-mark">360</div>
+        <div>
+          <strong>POA360</strong>
+          <span>Acesso Governamental</span>
+        </div>
+      </a>
+
+      <div class="auth-copy">
+        <div class="tag">Área restrita • dashboard • contatos estratégicos</div>
+        <h1>Painel exclusivo da gestão pública</h1>
+        <p>
+          Cadastre uma conta institucional demo ou faça login para acessar o dashboard
+          executivo do POA360.
+        </p>
+      </div>
+    </div>
+
+    <div class="auth-card glass">
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="govLoginTab">Login</button>
+        <button class="tab-btn" data-tab="govRegisterTab">Cadastro</button>
+      </div>
+
+      <div id="govLoginTab" class="tab-content active">
+        <h2>Entrar</h2>
+        <p class="muted">Acesse o dashboard governamental.</p>
+
+        <form id="govLoginForm" class="form-grid">
+          <input type="email" id="govLoginEmail" placeholder="E-mail institucional" required />
+          <input type="password" id="govLoginPassword" placeholder="Senha" required />
+          <button type="submit" class="btn btn-primary wide">Entrar no dashboard</button>
+        </form>
+      </div>
+
+      <div id="govRegisterTab" class="tab-content">
+        <h2>Cadastrar conta demo</h2>
+        <p class="muted">Crie o acesso do responsável institucional.</p>
+
+        <form id="govRegisterForm" class="form-grid">
+          <input type="text" id="govRegisterName" placeholder="Nome do responsável" required />
+          <input type="email" id="govRegisterEmail" placeholder="E-mail institucional" required />
+          <input type="text" id="govRegisterOrg" placeholder="Órgão / secretaria / setor" required />
+          <input type="password" id="govRegisterPassword" placeholder="Criar senha" required />
+          <button type="submit" class="btn btn-primary wide">Cadastrar acesso</button>
+        </form>
+      </div>
+
+      <a href="index.html" class="back-link">← Voltar para a página inicial</a>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
